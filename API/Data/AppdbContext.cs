@@ -1,15 +1,15 @@
 using System;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
+using API.Data;
 
 namespace API.Data;
 
-public class AppContext(DbContext options) : DbContext(options) 
+public class AppDbContext(DbContextOptions options) : DbContext(options)
+{ 
+public DbSet<AppUser> Users { get; set; }
 
-{
+}    
 
- public DbSet<AppUser> Users { get; set; }   
-
-}
 
     
